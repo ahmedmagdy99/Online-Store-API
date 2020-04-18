@@ -28,8 +28,15 @@ public class UserService implements UserDetailsService{
             return ("This Email is used before please use other Email");
         }
         else {
-            users.save(user);
-            return ("Your account has been registered successfully");
+            if(user.getRoles().equals("ROLE_USER")||user.getRoles().equals("ROLE_ADMIN"))
+            {
+                users.save(user);
+                return ("Your account has been registered successfully");
+            }
+            else
+            {
+                return ("Your account has a rong role");
+            }
         }
     }
 
