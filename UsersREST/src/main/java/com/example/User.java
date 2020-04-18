@@ -4,28 +4,47 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
     private Integer id;
+    @NotBlank(message = "Name is mandatory")
     private String name;
+    @NotBlank(message = "Email is mandatory")
+    @Email(message = "Input should be in email form")
     private String email;
+    @NotBlank(message = "Password is mandatory")
+    @Size(min=8,  message=" Password must be greater than 8 characters ")
     private String password;
+    @NotBlank(message = "Adress is mandatory")
     private String adress;
+    @NotBlank(message = "Phone is mandatory")
     private String phone;
-    private String type;
+    @NotBlank(message = "Account ROLE is mandatory")
+    private String roles;
+
     public User() {
     }
 
-    public User(Integer id, String name, String email, String password, String adress, String phone,String type) {
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public User(Integer id, String name, String email, String password, String adress, String phone, String roles) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.adress = adress;
         this.phone = phone;
-        this.type=type;
-
+        this.roles = roles;
     }
 
     @Id
@@ -76,13 +95,5 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 }
