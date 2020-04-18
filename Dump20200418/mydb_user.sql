@@ -29,9 +29,9 @@ CREATE TABLE `user` (
   `password` varchar(45) NOT NULL,
   `adress` varchar(45) NOT NULL,
   `phone` varchar(45) NOT NULL,
-  `type` varchar(15) DEFAULT NULL,
+  `roles` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (16,'Ahmed','ahmedmagdy@gmail.com','ahmed123','40 california','01234567894','admin'),(17,'Mostafa','ahmedmostafa@gmail.com','mostafa123','30 california','01478963255','B'),(18,'Ibrahim','ahmedibrahim@gmail.com','ibrahim123','20 california','0158796342','SO'),(19,'abozaid','mahmoudabozaid@gmail.com','abozaid123','10 calidornia','01478963254','B'),(20,'Test','test123','testtest','test','0123','B');
+INSERT INTO `user` VALUES (27,'Mostafa','ahmedmostafa@gmail.com','123456789','test','01066098665','ROLE_USER'),(28,'ibrahim','ahmedIbrahim@gmail.com','123456789','test','01066098665','ROLE_ADMIN'),(34,'Ahmed','ahmedmagdy@gmail.com','123456789','test','01066098665','ROLE_ADMIN');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-02 17:39:06
+-- Dump completed on 2020-04-18 18:22:13
