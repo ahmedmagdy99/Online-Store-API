@@ -24,8 +24,8 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public void register(@Valid @RequestBody User user)
+    public String register(@Valid @RequestBody User user)
     {
-        service.save(user);
+        return service.save(user);
     }
 }
